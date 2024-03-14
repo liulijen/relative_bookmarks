@@ -71,8 +71,11 @@ async function main() {
 	renderTree(1, folders_root, bookmarks);
 
 	const url = new URL(tab.url || "");
+	const pathParts = url.pathname.split("/d/");
+	const relativePath = pathParts.length > 1 ? "/d/" + pathParts[1] : "";
+
 	getInput("title").value = "Rel: " + (tab.title || "");
-	getInput("path").value = url.pathname;
+	getInput("path").value = relativePath;
 	getInput("hash").value = url.hash;
 	getInput("query").value = url.search;
 
