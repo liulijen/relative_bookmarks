@@ -1,5 +1,5 @@
 {
-	"name": "Relative Bookmarks",
+	"name": "Relative Bookmarks (wd1)",
 	"version": "1.0",
 	"manifest_version": 3,
 	"background": {
@@ -12,7 +12,7 @@
 		"default_icon": {
 			"128": "icon_128.png"
 		},
-		"default_title": "Add relative bookmark",
+		"default_title": "Add relative bookmark (wd1)",
 		"default_popup": "popup.html"
 	},
 	"permissions": ["bookmarks", "activeTab"]
