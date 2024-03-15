@@ -71,8 +71,9 @@ async function main() {
 	renderTree(1, folders_root, bookmarks);
 
 	const url = new URL(tab.url || "");
-	const pathParts = url.pathname.split("/d/");
-	const relativePath = pathParts.length > 1 ? "/d/" + pathParts[1] : "";
+	const regex = /^(\/[^/]+\/)/;
+	const match = url.pathname.match(regex);
+	const relativePath = match ? url.pathname.slice(match[0].length) : "";
 
 	getInput("title").value = "Rel: " + (tab.title || "");
 	getInput("path").value = relativePath;

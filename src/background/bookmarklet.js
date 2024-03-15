@@ -12,13 +12,12 @@ function relative_mark_101(datab) {
 function build_path({ path }) {
 	if (!path) return window.location.pathname;
 
-	if (path.startsWith("/d/")) {
-		return window.location.pathname.split("/d/")[0] + path;
-	} else {
-		return (
-			window.location.pathname + (window.location.pathname.endsWith("/") ? "" : "/") + path
-		);
+	const regex = /^(\/[^/]+\/)/;
+	const match = window.location.pathname.match(regex);
+	if (match) {
+		return match[0] + path;
 	}
+	return window.location.pathname + (window.location.pathname.endsWith("/") ? "" : "/") + path;
 }
 
 function build_query({ query, query_mix, query_override }) {
