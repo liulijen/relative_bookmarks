@@ -75,7 +75,7 @@ async function main() {
 	const match = url.pathname.match(regex);
 	const relativePath = match ? url.pathname.slice(match[0].length) : "";
 
-	getInput("title").value = "Rel: " + (tab.title || "");
+	getInput("title").value = "Re: " + (tab.title || "");
 	getInput("path").value = relativePath;
 	getInput("hash").value = url.hash;
 	getInput("query").value = url.search;
